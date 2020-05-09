@@ -1,0 +1,52 @@
+body
+{
+	background: #1FA2FF;  /* fallback for old browsers */
+	background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.thumbnail img
+{
+	width: 100%;
+}
+
+.thumbnail
+{
+	padding: 0;
+}
+
+.thumbnail .caption
+{
+	padding: 9px;
+}
+
+#map
+{
+	height: 400px;
+	width: 100%;
+}
+
+#userID
+{
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+	background-color: rgba(29, 106, 154, 0.72);
+	color: black;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 1px;
+	width: 1px;
+}
+
+#profileImage
+{
+	position: relative;
+}
+
+#profileImage:hover #userID
+{
+	visibility: visible;
+	opacity: 0.5;
+}

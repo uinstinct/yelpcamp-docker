@@ -1,0 +1,112 @@
+<head>
+    <title>YelpCamp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="icon" type="images/png" href="icons/instinct logo.png">
+    <style type="text/css">
+    	body {
+		  background-color: #000;
+		}
+		#landing-header {
+		  z-index: 1;/*the z-index=1 refers to the position of the landing header. It means that the landing header is elevated*/
+		  position: relative;
+		  text-align: center;
+		  padding-top: 40vh;
+		}
+		#landing-header h1 {
+		  color: rgb(255,255,255);
+		}
+		.slideshow { 
+		  position: fixed;
+		  width: 100%;
+		  height: 100%;
+		  top: 0;
+		  left: 0;
+		  z-index: 0;
+		  list-style: none;
+		  margin: 0;
+		  padding: 0;
+		}
+		.slideshow li { 
+		  width: 100%;
+		  height: 100%;
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  background-size: cover;
+		  background-position: 50% 50%;
+		  background-repeat: no-repeat;
+		  opacity: 0;
+		  z-index: 0;
+		  animation: imageAnimation 50s linear infinite; 
+		}
+		.slideshow li:nth-child(1) { 
+		  background-image: url(https://images.pexels.com/photos/3359742/pexels-photo-3359742.jpeg); 
+		}
+		.slideshow li:nth-child(2) { 
+		  background-image: url(https://images.pexels.com/photos/2822949/pexels-photo-2822949.jpeg);
+		  animation-delay: 10s; 
+		}
+		.slideshow li:nth-child(3) { 
+		  background-image: url(https://images.pexels.com/photos/2365465/pexels-photo-2365465.jpeg);
+		  animation-delay: 20s; 
+		}
+		.slideshow li:nth-child(4) { 
+		  background-image: url(https://images.pexels.com/photos/3233372/pexels-photo-3233372.jpeg);
+		  animation-delay: 30s; 
+		}
+		.slideshow li:nth-child(5) { 
+		  background-image: url(https://images.pexels.com/photos/3224232/pexels-photo-3224232.jpeg);
+		  animation-delay: 40s; 
+		}
+		@keyframes imageAnimation { 
+		  0% { 
+		    opacity: 0; 
+		    animation-timing-function: ease-in;
+		  }
+		  10% {
+		    opacity: 1;
+		    animation-timing-function: ease-out;
+		  }
+		  20% {
+		    opacity: 1
+		  }
+		  30% {
+		    opacity: 0
+		  }
+		}
+    </style>
+</head>
+<body>
+
+<div class="container">
+	<%if (error && error.length>0) {%>
+		<div class="alert alert-danger" role="alert">
+		  <%=error%>
+		</div>
+	<%}else if (loggedout && loggedout.length>0) {%>
+		<div class="alert alert-dark" role="alert">
+		  <%=loggedout%>
+		</div>
+	<%}else if(mishap && mishap.length>0){%>
+		<div class="alert alert-warning" role="alert">
+			<%=mishap%>
+		</div>
+	<%}else if(success && success.length>0){%>
+		<div class="alert alert-success" role="alert">
+			<%=success%>
+		</div>
+	<%}%>
+</div>
+
+<div id="landing-header">
+		<h1>This is the Official Page of the YelpCamp Project</h1>
+	<a href="/campgrounds" class="btn btn-lg btn-success">View All Campgrounds</a>
+</div>
+
+<ul class="slideshow">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>

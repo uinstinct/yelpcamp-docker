@@ -1,0 +1,6 @@
+node_modules/
+vs/
+.git/
+.gitignore
+.dockerignore
+data/

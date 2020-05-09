@@ -1,0 +1,18 @@
+version: '2'
+services:
+  mongo:
+    container_name: yelpmongo
+    image: mongo
+    volumes: 
+        - ./data:/data/db
+    ports:
+      - "27017:27017"
+  app:
+    container_name: yelpnode
+    env_file: .env
+    restart: always
+    build: .
+    ports:
+      - '3000:8000'
+    depends_on: 
+        - mongo
